@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plastic Recycling Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>♻️ Plastic Recycling System</h1>
+    <p>Track and contribute to a cleaner planet by recycling plastic waste.</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Submit Your Recycled Plastic</h2>
+
+    <div class="tabs">
+      <button onclick="showForm('individual')">Individual</button>
+      <button onclick="showForm('organization')">Organization</button>
+    </div>
+
+    <form id="individualForm" class="recyclingForm">
+      <h3>Individual Form</h3>
+      <input type="text" id="ind_name" placeholder="Your Name" required />
+      <input type="email" id="ind_email" placeholder="Email Address" required />
+      <input type="number" id="ind_amount" placeholder="Plastic Amount (kg)" required />
+      <select id="ind_plasticType" required>
+        <option value="">Select Plastic Type</option>
+        <option value="PET">PET (Type 1)</option>
+        <option value="HDPE">HDPE (Type 2)</option>
+        <option value="PVC">PVC (Type 3)</option>
+      </select>
+      <input type="file" id="ind_image" accept="image/*" required />
+      <button type="submit" style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: #28a745; border: none;">
+        <a href="1.html" style="color: white; text-decoration: none;">Submit</a>
+      </button>
+      
+    </form>
+
+    <form id="organizationForm" class="recyclingForm" style="display: none;">
+      <h3>Organization Form</h3>
+      <input type="text" id="org_name" placeholder="Organization Name" required />
+      <input type="email" id="org_email" placeholder="Email Address" required />
+      <input type="text" id="org_contact" placeholder="Contact Person" required />
+      <input type="number" id="org_amount" placeholder="Plastic Amount (kg)" required />
+      <select id="org_plasticType" required>
+        <option value="">Select Plastic Type</option>
+        <option value="PET">PET (Type 1)</option>
+        <option value="HDPE">HDPE (Type 2)</option>
+        <option value="PVC">PVC (Type 3)</option>
+        <option value="Mixed">Mixed Plastics</option>
+      </select>
+      <textarea id="org_message" placeholder="Additional Information" rows="4"></textarea>
+      <input type="file" id="org_image" accept="image/*" required />
+      <button type="submit" style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: #28a745; border: none;">
+        <a href="1.html" style="color: white; text-decoration: none;">Submit</a>
+      </button>
+      
+
+    </form>
+  </section>
+
+  <footer>
+    <p>🌿 Together, we make a greener world. Start recycling today!</p>
+  </footer>
+
+  <script>
+    function showForm(type) {
+      document.getElementById('individualForm').style.display = type === 'individual' ? 'block' : 'none';
+      document.getElementById('organizationForm').style.display = type === 'organization' ? 'block' : 'none';
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
